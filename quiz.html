@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxCode-Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- navbar starts-->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MaxCode</div>
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- navbar ends-->
+  <!-- quiz html starts  -->
+  <div class="container">
+
+    <!-- Intro / Title -->
+    <header class="title-block" id="titleBlock">
+      <h1>Choose a Quiz Topic</h1>
+      <p class="subtitle">Select HTML, CSS, or JavaScript — each quiz has 15 questions. One question at a time.</p>
+    </header>
+
+    <!-- Selection area -->
+    <section id="selector" class="selector">
+      <div class="select-card" data-subject="html" tabindex="0">
+        <i class="fab fa-html5"></i>
+        <h3>HTML Basics</h3>
+        <p>Structure, tags, attributes and semantic elements.</p>
+      </div>
+
+      <div class="select-card" data-subject="css" tabindex="0">
+        <i class="fab fa-css3-alt"></i>
+        <h3>CSS Fundamentals</h3>
+        <p>Selectors, box model, display, positioning and styling.</p>
+      </div>
+
+      <div class="select-card" data-subject="js" tabindex="0">
+        <i class="fab fa-js-square"></i>
+        <h3>JavaScript Basics</h3>
+        <p>Variables, operators, arrays, objects, loops and DOM basics.</p>
+      </div>
+    </section>
+
+    <!-- Quiz area (hidden until subject chosen) -->
+    <section id="quizArea" class="quiz-area hidden" aria-hidden="true">
+      <div class="quiz-meta">
+        <span id="subjectLabel" class="subject-label">SUBJECT</span>
+        <span id="progressLabel" class="progress-label">Question 1 / 15</span>
+      </div>
+
+      <div id="questionText" class="question-text">Question will appear here</div>
+
+      <div id="optionsList" class="options-list"></div>
+
+      <div class="controls">
+        <button id="prevBtn" class="control-btn secondary" disabled>Previous</button>
+        <button id="nextBtn" class="control-btn" disabled>Next</button>
+      </div>
+    </section>
+
+  </div>
+  <!-- quiz html ends  -->
+  <!-- footer starts-->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about" id="f-about">
+        <h3>MaxCode</h3>
+        <p>Empowering learners through engaging quizzes and interactive lessons.
+          Challenge yourself, test your knowledge, and learn something new every day.</p>
+      </div>
+
+      <div class="footer-section quick-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="results.html">Result</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section newsletter">
+        <h4>Stay Updated</h4>
+        <p>Subscribe to get new quizzes and learning updates directly to your inbox.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-section contact">
+        <h4>Contact Us</h4>
+        <p>Email: info@quizmaster.com</p>
+        <p>Phone: +92 300 1234567</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 MaxCode. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+  </footer>
+  <!-- footer ends-->
+
+
+  <script>
+    // Navbar JS
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = navLinks.querySelectorAll('a');
+
+    const toggleMenu = () => {
+      navLinks.classList.toggle('show');
+      document.body.classList.toggle('nav-open');
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Close menu when a navigation link is clicked (mobile)
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Optional: close the menu when clicking outside it (on mobile)
+    window.addEventListener('click', (e) => {
+      const isClickInside = navLinks.contains(e.target) || hamburger.contains(e.target);
+      if (!isClickInside && navLinks.classList.contains('show')) {
+        toggleMenu();
+      }
+    });
+    // navbarjs ends
+  </script>
+  <script src="quiz.js"></script>
+</body>
+
+</html>

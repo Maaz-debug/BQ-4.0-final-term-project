@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaxCode-Home</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- navbar starts-->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MaxCode</div>
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- navbar ends-->
+  <!-- Hero Section starts-->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Test Your Web Development Skills!</h1>
+      <p>Learn, practice, and improve your HTML, CSS, and JavaScript knowledge through fun quizzes.</p>
+      <a href="quiz.html" class="btn">Start Quiz</a>
+    </div>
+  </section>
+  <!-- hero section ends -->
+
+  <!-- About Section starts-->
+  <section class="about">
+    <div class="aboutB">
+      <h2>About This Website</h2>
+      <p>This website is designed to make learning web development both fun and interactive. It allows users to test
+        their understanding of HTML, CSS, and JavaScript through engaging quizzes and instant feedback. Each quiz is
+        carefully designed to strengthen fundamental concepts, encourage self-learning, and promote confidence in
+        front-end technologies. Built entirely with HTML, CSS, and JavaScript, this platform showcases how creativity
+        and logic can come together to create meaningful learning experiences.</p>
+    </div>
+  </section>
+  <!-- About Section ends -->
+
+  <!-- Features Section starts-->
+  <section class="features">
+    <h2>Why Choose MaxCode?</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Interactive Learning</h3>
+        <p>Engage with quizzes designed to make web development concepts easy and fun to understand.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Quick Quizzes</h3>
+        <p>Boost your knowledge quickly with bite-sized quizzes that instantly test your understanding.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-trophy"></i>
+        <h3>Track Your Progress</h3>
+        <p>View your results and compete on the leaderboard to improve with every attempt.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Features Section ends-->
+
+  <!-- Statistics Section starts -->
+  <section class="stats-section">
+    <h2 class="stats-title">Our Achievements</h2>
+    <p class="stats-subtitle">Numbers that define our growing learning community</p>
+
+    <div class="stats-container">
+      <div class="stat-card">
+        <i class="fas fa-user-graduate"></i>
+        <h3 class="counter" data-target="5000">0</h3>
+        <p>Learners Enrolled</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-brain"></i>
+        <h3 class="counter" data-target="200">0</h3>
+        <p>Interactive Quizzes</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-trophy"></i>
+        <h3 class="counter" data-target="98">0</h3>
+        <p>Success Rate (%)</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-globe"></i>
+        <h3 class="counter" data-target="15">0</h3>
+        <p>Countries Reached</p>
+      </div>
+    </div>
+  </section>
+  <!-- stats Section ends -->
+
+  <!-- footer starts-->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about" id="f-about">
+        <h3>MaxCode</h3>
+        <p>Empowering learners through engaging quizzes and interactive lessons.
+          Challenge yourself, test your knowledge, and learn something new every day.</p>
+      </div>
+
+      <div class="footer-section quick-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="results.html">Result</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section newsletter">
+        <h4>Stay Updated</h4>
+        <p>Subscribe to get new quizzes and learning updates directly to your inbox.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-section contact">
+        <h4>Contact Us</h4>
+        <p>Email: info@quizmaster.com</p>
+        <p>Phone: +92 300 1234567</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 MaxCode. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+  </footer>
+  <!-- footer ends-->
+
+  <script>
+    // statsjs 
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // speed of animation
+
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target + (target > 100 ? '+' : '');
+          }
+        };
+        updateCount();
+      });
+    };
+
+    // Run animation when section appears on screen
+    let started = false;
+    window.addEventListener('scroll', () => {
+      const section = document.querySelector('.stats-section');
+      const sectionTop = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (sectionTop < windowHeight && !started) {
+        started = true;
+        animateCounters();
+      }
+    });
+    // Navbar JS
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = navLinks.querySelectorAll('a');
+
+    const toggleMenu = () => {
+      navLinks.classList.toggle('show');
+      document.body.classList.toggle('nav-open');
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Close menu when a navigation link is clicked (mobile)
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Optional: close the menu when clicking outside it (on mobile)
+    window.addEventListener('click', (e) => {
+      const isClickInside = navLinks.contains(e.target) || hamburger.contains(e.target);
+      if (!isClickInside && navLinks.classList.contains('show')) {
+        toggleMenu();
+      }
+    });
+    // navbarjs ends
+  </script>
+</body>
+
+</html>

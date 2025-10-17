@@ -1,0 +1,430 @@
+/* ==== Base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #003737 0%, #002f31 60%);
+  color: #e9fbfb;
+  ;
+  color: #fff;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Css starts */
+header {
+  background: #101820;
+  color: white;
+  padding: 15px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: darkcyan;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: darkcyan;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: darkcyan;
+  cursor: pointer;
+}
+
+/* Show hamburger and hide nav links on small screens */
+/* MOBILE NAV (replace your existing media query block) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* Make navbar links fixed so they sit above everything */
+  .nav-links {
+    flex-direction: column;
+    background: #101820;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 70px);
+    display: none;
+    text-align: center;
+    padding: 30px 20px;
+    z-index: 9999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links.show {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    animation: slideDown 0.35s ease;
+  }
+
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-links li {
+    margin: 18px 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  /* Prevent body from scrolling when menu is open */
+  body.nav-open {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+/* navbar Css ends  */
+
+/* contact css starts */
+.contact-box h1 {
+  color: rgb(232, 238, 238);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.contact-box p {
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ==== Layout ==== */
+.contact-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /* align-items: center; */
+}
+
+.contact-box {
+  background: rgb(2, 37, 37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px 25px;
+  flex: 1 1 100%;
+  min-width: auto;
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+  transition: all 0.3s ease;
+}
+
+.contact-box:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+/* ==== Form ==== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: cyan;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.c-btn {
+  background: darkcyan;
+  color: #111;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.c-btn:hover {
+  background: #00b7b7;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ==== Social Links ==== */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: stretch;
+  margin-top: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.social-links a i {
+  font-size: 22px;
+}
+
+
+/* ==== Platform Colors ==== */
+.email:hover {
+  background: #d44638;
+  border-color: #d44638;
+}
+
+.github:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+}
+
+.instagram:hover {
+  background: #e1306c;
+  border-color: #e1306c;
+}
+
+.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-box {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 10px;
+  }
+
+  .contact-box {
+    max-width: 95%;
+    margin-inline: auto;
+  }
+}
+
+/* contact css ends  */
+/* footer starts*/
+footer {
+  background: #0d1117;
+  color: #fff;
+  padding: 60px 0 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+#f-about {
+  background: linear-gradient(rgba(25, 25, 25, 0.7), rgba(27, 27, 27, 0.7)), url(/images/f-img.png) no-repeat center center/cover;
+  height: 300px;
+  border-radius: 10px;
+  /* text-align: center; */
+  padding: 80px 20px;
+}
+
+#f-about h3 {
+  color: rgb(38, 201, 201);
+  margin-top: -30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: darkcyan;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: white;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: darkcyan;
+}
+
+.footer-section form {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.footer-section input[type="email"] {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.footer-section button {
+  background: darkcyan;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-section button:hover {
+  background: rgb(3, 67, 67);
+}
+
+.social-links-f a {
+  color: #bbb;
+  font-size: 18px;
+  margin-right: 12px;
+  transition: color 0.3s ease;
+}
+
+.social-links-f a:hover {
+  color: darkcyan;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 13px;
+  border-top: 1px solid #222;
+  margin-top: 30px;
+}
+
+.footer-bottom a {
+  color: darkcyan;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* footer ends*/
